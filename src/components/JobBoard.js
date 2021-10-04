@@ -17,17 +17,13 @@ export default function JobBoard({ internship }) {
 
   return (
     <div
-      className={
-        isNew && featured
-          ? `sm:flex-col sm:gap-3 sm:items-start md:flex-row max-w-screen-xl mx-auto flex items-center bg-white shadow-xl mb-6 px-8 py-6 rounded-md
-    border-l-4 border-indigo-600 sm:w-11/12 `
-          : "sm:flex-col sm:gap-3 sm:items-start md:flex-row max-w-screen-xl mx-auto flex items-center bg-white shadow-xl mb-6 px-8 py-6 rounded-md sm:w-11/12"
-      }
+      className={`flex flex-col  md:flex-row  md:items-center w-11/12 md:max-w-screen-xl mx-auto  bg-white shadow-xl mb-14 md:mb-6 px-8 py-2 md:py-6 rounded-md 
+      ${isNew && featured && "border-l-4 border-indigo-600"}  `}
     >
-      <div className="mr-4">
+      <div className="-mb-8 transform -translate-y-12 md:translate-y-0 md:mr-4 md:mb-0">
         <img src={logo} alt={company} className="block " />
       </div>
-      <div className="flex flex-col justify-between mr-auto gap-2">
+      <div className="flex flex-col justify-between mr-auto gap-2 w-full md:w-max">
         <h3 className="font-bold text-indigo-600">
           {company}{" "}
           {isNew && (
@@ -42,17 +38,17 @@ export default function JobBoard({ internship }) {
           )}
         </h3>
         <h2 className="font-bold text-xl">{position}</h2>
-        <p className="text-gray-500">
+        <p className="text-gray-500 border-b-2 border-gray-400 pb-3 mb-5 md:border-0 md:p-0 md:m-0">
           {postedAt} . {contract} . {location}{" "}
         </p>
       </div>
 
-      <div>
-        {languages.map((lang) => (
-          <Label tag={lang} />
+      <div className="flex flex-wrap mb-4 gap-2 md:m-0">
+        {languages.map((lang, index) => (
+          <Label tag={lang} key={index} />
         ))}
-        {tools.map((tool) => (
-          <Label tag={tool} />
+        {tools.map((tool, index) => (
+          <Label tag={tool} key={index} />
         ))}
       </div>
     </div>
