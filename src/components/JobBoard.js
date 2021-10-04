@@ -8,8 +8,6 @@ export default function JobBoard({ internship }) {
     new: isNew,
     featured,
     position,
-    role,
-    level,
     postedAt,
     contract,
     location,
@@ -21,13 +19,13 @@ export default function JobBoard({ internship }) {
     <div
       className={
         isNew && featured
-          ? `max-w-screen-xl mx-auto flex items-center bg-white shadow-xl mb-6 px-8 py-6 rounded-md
-    border-l-4 border-indigo-600`
-          : "max-w-screen-xl mx-auto flex items-center bg-white shadow-xl mb-6 px-8 py-6 rounded-md"
+          ? `sm:flex-col sm:gap-3 sm:items-start md:flex-row max-w-screen-xl mx-auto flex items-center bg-white shadow-xl mb-6 px-8 py-6 rounded-md
+    border-l-4 border-indigo-600 sm:w-11/12 `
+          : "sm:flex-col sm:gap-3 sm:items-start md:flex-row max-w-screen-xl mx-auto flex items-center bg-white shadow-xl mb-6 px-8 py-6 rounded-md sm:w-11/12"
       }
     >
       <div className="mr-4">
-        <img src={logo} alt={company} className="block" />
+        <img src={logo} alt={company} className="block " />
       </div>
       <div className="flex flex-col justify-between mr-auto gap-2">
         <h3 className="font-bold text-indigo-600">
