@@ -5,9 +5,7 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [internships, setInternships] = useState([]);
 
-  useEffect(() => {
-    setInternships(data);
-  }, []);
+  useEffect(() => setInternships(data), []);
 
   return (
     <div className="App">
