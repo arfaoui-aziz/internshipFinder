@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import JobBoard from "./components/JobBoard";
+import data from "./db/data";
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const [internships, setInternships] = useState([]);
+
+  useEffect(() => {
+    setInternships(data);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {internships.length ? (
+        internships.map((internship) => (
+          <JobBoard internship={internship} key={internship.id} />
+        ))
+      ) : (
+        <h2>No Internships Found</h2>
+      )}
+      <JobBoard />
     </div>
   );
 }
