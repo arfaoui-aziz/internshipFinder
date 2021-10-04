@@ -8,7 +8,7 @@ function App() {
   useEffect(() => setInternships(data), []);
 
   return (
-    <div className="App">
+    <div className="py-20 bg-blue-100">
       {internships.length ? (
         internships.map((internship) => (
           <JobBoard internship={internship} key={internship.id} />
@@ -16,7 +16,6 @@ function App() {
       ) : (
         <h2>No Internships Found</h2>
       )}
-      <JobBoard />
     </div>
   );
 }
