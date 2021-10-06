@@ -11,6 +11,8 @@ export default function JobBoard({ internship }) {
     postedAt,
     contract,
     location,
+    role,
+    level,
     languages,
     tools,
   } = internship;
@@ -27,12 +29,12 @@ export default function JobBoard({ internship }) {
         <h3 className="font-bold text-indigo-600">
           {company}{" "}
           {isNew && (
-            <span class="ml-2 text-xs font-semibold uppercase inline-block py-1 px-2 rounded-full text-white bg-indigo-600  last:mr-0 mr-1">
+            <span className="ml-2 text-xs font-semibold uppercase inline-block py-1 px-2 rounded-full text-white bg-indigo-600  last:mr-0 mr-1">
               new!
             </span>
           )}{" "}
           {featured && (
-            <span class="text-xs font-semibold uppercase inline-block py-1 px-2 rounded-full text-white bg-gray-800 last:mr-0 mr-1">
+            <span className="text-xs font-semibold uppercase inline-block py-1 px-2 rounded-full text-white bg-gray-800 last:mr-0 mr-1">
               featured
             </span>
           )}
@@ -44,6 +46,9 @@ export default function JobBoard({ internship }) {
       </div>
 
       <div className="flex flex-wrap mb-4 gap-2 md:m-0">
+        <Label tag={level} />
+        <Label tag={role} />
+
         {languages.map((lang, index) => (
           <Label tag={lang} key={index} />
         ))}

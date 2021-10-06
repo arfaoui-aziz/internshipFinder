@@ -2,6 +2,7 @@ import JobBoard from "./components/JobBoard";
 import data from "./db/data";
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
+import FilterBox from "./components/FilterBox";
 
 function App() {
   const [internships, setInternships] = useState([]);
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Header />
+      <FilterBox />
       <div className="py-20 bg-blue-100 ">
         {internships.length ? (
           internships.map((internship) => (
