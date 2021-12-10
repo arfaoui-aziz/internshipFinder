@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <Header />
-      <FilterBox />
-      <div className="py-20 bg-blue-100 ">
+      <main className="py-20">
+        <FilterBox />
         {internships.length ? (
           internships.map((internship) => (
             <JobBoard internship={internship} key={internship.id} />
@@ -21,7 +21,7 @@ function App() {
         ) : (
           <h2>No Internships Found</h2>
         )}
-      </div>
+      </main>
     </>
   );
 }
